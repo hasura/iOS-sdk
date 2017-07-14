@@ -23,6 +23,56 @@ public typealias UploadType = Moya.UploadType
 public typealias Task = Moya.Task
 
 
+protocol MoyaHTTPMethod {
+    var moya: Moya.Method { get }
+}
+
+extension HTTPMethod: MoyaHTTPMethod {
+    
+    var moya: Moya.Method {
+        switch self {
+        case .options: return Moya.Method.options
+        case .get     : return Moya.Method.get
+        case .head    : return Moya.Method.head
+        case .post    : return Moya.Method.post
+        case .put     : return Moya.Method.put
+        case .patch   : return Moya.Method.patch
+        case .delete  : return Moya.Method.delete
+        case .trace   : return Moya.Method.trace
+        case .connect : return Moya.Method.connect
+        }
+    }
+    
+}
+
+protocol MoyaParamaterEncoding {
+    var moya: Moya.ParameterEncoding { get }
+}
+
+extension ParameterEncoding: MoyaParamaterEncoding {
+    var moya: Moya.ParameterEncoding {
+        switch self {
+        case .json: return JSONEncoding.default
+        case .propertyList: return PropertyListEncoding.default
+        case .url: return URLEncoding.default
+        }
+    }
+    
+}
+
+protocol MoyaTask {
+    var moya: Moya.Task { get }
+}
+
+extension RequestType: MoyaTask {
+    var moya: Moya.Task {
+        switch self {
+        case .normal: return Moya.Task.request
+        }
+    }
+}
+
+
 protocol HasuraService: Moya.TargetType {
     var serviceName: String { get }
 }
