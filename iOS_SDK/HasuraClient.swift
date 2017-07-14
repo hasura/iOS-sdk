@@ -8,9 +8,11 @@
 
 import Foundation
 
+public typealias HTTPHeaders = [String: String]
+
 public protocol HasuraFileStoreService {
-//    func uploadFile(file: Data, mimeType: String) -> HasuraUploadFileRequest
-//    func downloadFile(fileId: String) -> HasuraDownloadFileRequest
+    func uploadFile(file: Data, mimeType: String) -> HasuraUploadFileRequest
+    func downloadFile(fileId: String) -> HasuraDownloadFileRequest
 }
 
 internal protocol AuthHeaderProvider {
@@ -27,33 +29,33 @@ public protocol HasuraClient {
     
     var currentUser: HasuraUser { get }
     
-//    @discardableResult
-//    func useDataService(role: String?, requestBody: JSON) -> HasuraDataRequest
-//    
-//    @discardableResult
-//    func useQueryTemplateService(role: String?, templateName: String, requestBody: JSON) -> HasuraDataRequest
-//    
-//    @discardableResult
-//    func useFileservice(role: String?) -> HasuraFileStoreService
+    @discardableResult
+    func useDataService(role: String?, params: JSON) -> HasuraDataRequest
+    
+    @discardableResult
+    func useQueryTemplateService(role: String?, templateName: String, params: JSON?) -> HasuraDataRequest
+    
+    @discardableResult
+    func useFileservice(role: String?) -> HasuraFileStoreService
 }
 
 extension HasuraClient {
     
-//    @discardableResult
-//    public func useDataService(role: String? = nil, requestBody: JSON) -> HasuraDataRequest {
-//        return useDataService(role: role, requestBody: requestBody)
-//    }
-//    
-//    @discardableResult
-//    public func useDataService<T: JSONConvertible>(role: String? = nil, requestBody: T) ->  HasuraDataRequest {
-//        return useDataService(role: role, requestBody: requestBody.toJSON())
-//    }
-//    
-//    @discardableResult
-//    func useFileservice(role: String? = nil) -> HasuraFileStoreService{
-//        return useFileservice(role: role)    
-//    }
-//    
+    @discardableResult
+    public func useDataService(role: String? = nil, params: JSON) -> HasuraDataRequest {
+        return useDataService(role: role, params: params)
+    }
+    
+    @discardableResult
+    func useQueryTemplateService(role: String? = nil, templateName: String, params: JSON?) -> HasuraDataRequest {
+        return useQueryTemplateService(role: role, templateName: templateName, params: params)
+    }
+    
+    @discardableResult
+    func useFileservice(role: String? = nil) -> HasuraFileStoreService{
+        return useFileservice(role: role)    
+    }
+    
 }
 
 class HasuraClientImpl: HasuraClient, AuthHeaderProvider {
@@ -84,47 +86,47 @@ class HasuraClientImpl: HasuraClient, AuthHeaderProvider {
         return authHeader
     }
     
-//    @discardableResult
-//    func useDataService(role: String? = nil, requestBody: JSON) ->  HasuraDataRequest {
-//        return HTTPManager.request(url: projectConfig.dataQueryUrl, httpMethod: .post, params: requestBody, headers: getAuthHeaders(role: role))
-//    }
-//    
-//    @discardableResult
-//    func useQueryTemplateService(role: String?, templateName: String, requestBody: JSON) -> HasuraDataRequest {
-//        return HTTPManager.request(url: projectConfig.queryTemplateUrl + templateName, httpMethod: .post, params: requestBody, headers: getAuthHeaders(role: role))
-//    }
-//    
-//    @discardableResult
-//    func useFileservice(role: String?) -> HasuraFileStoreService {
-//        return FileStoreServiceImpl(role: role != nil ? role! : projectConfig.defaultRole, headers: getAuthHeaders(role: role), filestoreUrl: projectConfig.filestoreUrl)
-//    }
-//    
-//    class FileStoreServiceImpl: HasuraFileStoreService {
-//        
-//        var role: String
-//        var headers: HTTPHeaders?
-//        var filestoreUrl: String
-//        
-//        init(role: String, headers: HTTPHeaders?, filestoreUrl: String) {
-//            self.role = role
-//            self.headers = headers
-//            self.filestoreUrl = filestoreUrl
-//        }
-//        
-//        func uploadFile(file: Data, mimeType: String) -> HasuraUploadFileRequest {
-//            
-//            if headers == nil {
-//                headers = HTTPHeaders()
-//            }
-//            
-//            headers!["Content-Type"] = mimeType
-//            
-//            return HTTPManager.upload(url: filestoreUrl + UUID().uuidString, data: file, headers: headers)
-//        }
-//        
-//        func downloadFile(fileId: String) -> HasuraDownloadFileRequest {
-//            return HTTPManager.download(url: filestoreUrl + fileId, headers: headers)
-//        }
-//    }
+    @discardableResult
+    func useDataService(role: String? = nil, params: JSON) ->  HasuraDataRequest {
+        return HTTPManager.request(url: projectConfig.dataQueryUrl, httpMethod: .post, params: params, headers: getAuthHeaders(role: role))
+    }
+    
+    @discardableResult
+    func useQueryTemplateService(role: String?, templateName: String, params: JSON) -> HasuraDataRequest {
+        return HTTPManager.request(url: projectConfig.queryTemplateUrl + templateName, httpMethod: .post, params: params, headers: getAuthHeaders(role: role))
+    }
+    
+    @discardableResult
+    func useFileservice(role: String?) -> HasuraFileStoreService {
+        return FileStoreServiceImpl(role: role != nil ? role! : projectConfig.defaultRole, headers: getAuthHeaders(role: role), filestoreUrl: projectConfig.filestoreUrl)
+    }
+    
+    class FileStoreServiceImpl: HasuraFileStoreService {
+        
+        var role: String
+        var headers: HTTPHeaders?
+        var filestoreUrl: String
+        
+        init(role: String, headers: HTTPHeaders?, filestoreUrl: String) {
+            self.role = role
+            self.headers = headers
+            self.filestoreUrl = filestoreUrl
+        }
+        
+        func uploadFile(file: Data, mimeType: String) -> HasuraUploadFileRequest {
+            
+            if headers == nil {
+                headers = HTTPHeaders()
+            }
+            
+            headers!["Content-Type"] = mimeType
+            
+            return HTTPManager.upload(url: filestoreUrl + UUID().uuidString, data: file, headers: headers)
+        }
+        
+        func downloadFile(fileId: String) -> HasuraDownloadFileRequest {
+            return HTTPManager.download(url: filestoreUrl + fileId, headers: headers)
+        }
+    }
     
 }

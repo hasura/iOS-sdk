@@ -26,12 +26,8 @@
 		DA9B48A01F02F5960037E01A /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B489F1F02F5960037E01A /* AuthRequest.swift */; };
 		DA9C3C4C1F0A88A6006EB049 /* HasuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */; };
 		DA9C3C641F0CC157006EB049 /* OfflineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3C631F0CC157006EB049 /* OfflineStore.swift */; };
-		DAF31A331F1739C100AC902B /* Hasura+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31A321F1739C100AC902B /* Hasura+Moya.swift */; };
 		DAF31A6D1F173CE100AC902B /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31A661F173CCD00AC902B /* Moya.framework */; };
 		DAF31AB21F17872D00AC902B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31AA91F17871600AC902B /* Result.framework */; };
-		DAF31AE11F17890B00AC902B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE01F17890B00AC902B /* AuthService.swift */; };
-		DAF31AE31F17A83100AC902B /* CustomApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE21F17A83100AC902B /* CustomApis.swift */; };
-		DAF31AE61F17ACA900AC902B /* HasuraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE51F17ACA900AC902B /* HasuraService.swift */; };
 		DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE71F17AFEE00AC902B /* JSONType.swift */; };
 		DAF31AEC1F18CD6500AC902B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AEB1F18CD6500AC902B /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -293,12 +289,8 @@
 		DA9B489F1F02F5960037E01A /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraClient.swift; sourceTree = "<group>"; };
 		DA9C3C631F0CC157006EB049 /* OfflineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineStore.swift; sourceTree = "<group>"; };
-		DAF31A321F1739C100AC902B /* Hasura+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hasura+Moya.swift"; sourceTree = "<group>"; };
 		DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moya.xcodeproj; path = ../../../Moya/Moya.xcodeproj; sourceTree = "<group>"; };
 		DAF31A801F17871600AC902B /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = ../../../Result/Result.xcodeproj; sourceTree = "<group>"; };
-		DAF31AE01F17890B00AC902B /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		DAF31AE21F17A83100AC902B /* CustomApis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomApis.swift; sourceTree = "<group>"; };
-		DAF31AE51F17ACA900AC902B /* HasuraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraService.swift; sourceTree = "<group>"; };
 		DAF31AE71F17AFEE00AC902B /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONType.swift; sourceTree = "<group>"; };
 		DAF31AEB1F18CD6500AC902B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,14 +404,16 @@
 		DA9B47D01F00F4700037E01A /* Hasura */ = {
 			isa = PBXGroup;
 			children = (
-				DAF31AE51F17ACA900AC902B /* HasuraService.swift */,
-				DAF31A321F1739C100AC902B /* Hasura+Moya.swift */,
 				DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */,
 				DAF31AE71F17AFEE00AC902B /* JSONType.swift */,
 				DA9608FC1F0A7740009DA4F4 /* Hasura.swift */,
 				DAF31AEB1F18CD6500AC902B /* Extensions.swift */,
-				DAF31ABE1F1788E000AC902B /* Services */,
-				DAF31AE41F17AB3700AC902B /* Previous */,
+				DA9B48991F02584D0037E01A /* Hasura+Alamofire.swift */,
+				DA9B47E81F00F4900037E01A /* HasuraUser.swift */,
+				DA9B47EA1F00F4900037E01A /* HasuraError.swift */,
+				DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */,
+				DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */,
+				DA9C3C631F0CC157006EB049 /* OfflineStore.swift */,
 				DA9C3C651F0D25A6006EB049 /* Model */,
 				DA6DF1D71F0E7AB800F41AAC /* SupportingFiles */,
 			);
@@ -471,28 +465,6 @@
 				DAF31AB11F17871600AC902B /* Result.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DAF31ABE1F1788E000AC902B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				DAF31AE01F17890B00AC902B /* AuthService.swift */,
-				DAF31AE21F17A83100AC902B /* CustomApis.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		DAF31AE41F17AB3700AC902B /* Previous */ = {
-			isa = PBXGroup;
-			children = (
-				DA9B48991F02584D0037E01A /* Hasura+Alamofire.swift */,
-				DA9B47E81F00F4900037E01A /* HasuraUser.swift */,
-				DA9B47EA1F00F4900037E01A /* HasuraError.swift */,
-				DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */,
-				DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */,
-				DA9C3C631F0CC157006EB049 /* OfflineStore.swift */,
-			);
-			name = Previous;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -857,21 +829,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF31AE11F17890B00AC902B /* AuthService.swift in Sources */,
 				DA9B47EB1F00F4900037E01A /* HasuraUser.swift in Sources */,
 				DA9B489A1F02584D0037E01A /* Hasura+Alamofire.swift in Sources */,
-				DAF31AE31F17A83100AC902B /* CustomApis.swift in Sources */,
 				DA9B47ED1F00F4900037E01A /* HasuraError.swift in Sources */,
 				DA9608FD1F0A7740009DA4F4 /* Hasura.swift in Sources */,
 				DA9B48981F0253580037E01A /* HasuraErrorResponse.swift in Sources */,
 				DAF31AEC1F18CD6500AC902B /* Extensions.swift in Sources */,
-				DAF31A331F1739C100AC902B /* Hasura+Moya.swift in Sources */,
 				DA9608FB1F0A57C1009DA4F4 /* MessageResponse.swift in Sources */,
 				DA9B48A01F02F5960037E01A /* AuthRequest.swift in Sources */,
 				DA6DF1D91F0F507100F41AAC /* FileUploadResponse.swift in Sources */,
 				DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */,
 				DA9608F71F0A5481009DA4F4 /* AuthenticatedUserApi.swift in Sources */,
-				DAF31AE61F17ACA900AC902B /* HasuraService.swift in Sources */,
 				DA9C3C641F0CC157006EB049 /* OfflineStore.swift in Sources */,
 				DA9608F91F0A57A4009DA4F4 /* AuthResponse.swift in Sources */,
 				DA9608F51F0A4F95009DA4F4 /* AnonymousUserApi.swift in Sources */,

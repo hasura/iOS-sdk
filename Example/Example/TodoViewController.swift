@@ -22,7 +22,7 @@ class TodoViewController: UITableViewController {
         
         
         //Fetch all todos for the user
-        client.useDataService(requestBody: [
+        client.useDataService(params: [
             "type" : "select",
             "args" : [
                 "table"     : "todo",
@@ -57,7 +57,7 @@ class TodoViewController: UITableViewController {
     
     
     private func addTodo(newTodoTitle: String) {
-        client.useDataService(requestBody: [
+        client.useDataService(params: [
             "type" : "insert",
             "args" : [
                 "table"     : "todo",
@@ -90,6 +90,7 @@ class TodoViewController: UITableViewController {
     }
     
     private func performLogout() {
+        
         user.logout { (successful, error) in
             if successful {
                 self.dismiss(animated: true, completion: nil)
@@ -127,7 +128,7 @@ class TodoViewController: UITableViewController {
         selectedTodo.completed = !selectedTodo.completed
         
         
-        client.useDataService(requestBody: [
+        client.useDataService(params: [
             "type" : "update",
             "args" : [
                 "table"     : "todo",
@@ -154,7 +155,7 @@ class TodoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             
-            client.useDataService(requestBody: [
+            client.useDataService(params: [
                 "type" : "delete",
                 "args" : [
                     "table"     : "todo",

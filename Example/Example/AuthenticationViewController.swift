@@ -86,9 +86,13 @@ class AuthenticationViewController: UIViewController {
         user.username = username.text!
         user.password = password.text!
         
-        user.signUp { (successful, error) in
-            if successful {
-                self.navigateToTodoVC()
+        user.signUp { (isSuccessful, isPendingVerification, error) in
+            if isSuccessful {
+                if isPendingVerification {
+                    
+                } else {
+                    self.navigateToTodoVC()
+                }
             } else {
                 self.handleError(error: error)
             }
