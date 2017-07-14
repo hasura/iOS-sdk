@@ -30,6 +30,7 @@
 		DAF31AB21F17872D00AC902B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31AA91F17871600AC902B /* Result.framework */; };
 		DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE71F17AFEE00AC902B /* JSONType.swift */; };
 		DAF31AEC1F18CD6500AC902B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AEB1F18CD6500AC902B /* Extensions.swift */; };
+		DAF31B1A1F18E36D00AC902B /* Hasura+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +294,7 @@
 		DAF31A801F17871600AC902B /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = ../../../Result/Result.xcodeproj; sourceTree = "<group>"; };
 		DAF31AE71F17AFEE00AC902B /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONType.swift; sourceTree = "<group>"; };
 		DAF31AEB1F18CD6500AC902B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hasura+Moya.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 				DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */,
 				DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */,
 				DA9C3C631F0CC157006EB049 /* OfflineStore.swift */,
+				DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */,
 				DA9C3C651F0D25A6006EB049 /* Model */,
 				DA6DF1D71F0E7AB800F41AAC /* SupportingFiles */,
 			);
@@ -839,6 +842,7 @@
 				DA9B48A01F02F5960037E01A /* AuthRequest.swift in Sources */,
 				DA6DF1D91F0F507100F41AAC /* FileUploadResponse.swift in Sources */,
 				DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */,
+				DAF31B1A1F18E36D00AC902B /* Hasura+Moya.swift in Sources */,
 				DA9608F71F0A5481009DA4F4 /* AuthenticatedUserApi.swift in Sources */,
 				DA9C3C641F0CC157006EB049 /* OfflineStore.swift in Sources */,
 				DA9608F91F0A57A4009DA4F4 /* AuthResponse.swift in Sources */,

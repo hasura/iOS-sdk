@@ -58,6 +58,10 @@ public struct ProjectConfig {
         }
     }
     
+    public func getCustomServiceBaseURL(serviceName: String) -> String {
+        return httpProtocol + "://" + serviceName + "." + baseDomain
+    }
+    
     public init(projectName: String?,
           customSubDomain: String? = nil,
           isEnabledOverHttp: Bool =  Defaults.IS_ENABLED_OVER_HTTP,

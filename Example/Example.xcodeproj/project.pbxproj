@@ -20,6 +20,7 @@
 		DA9B487B1F01209D0037E01A /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B487A1F01209D0037E01A /* ExampleUITests.swift */; };
 		DA9B48901F0136500037E01A /* Hasura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B488F1F0136500037E01A /* Hasura.framework */; };
 		DA9B48911F0136500037E01A /* Hasura.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B488F1F0136500037E01A /* Hasura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAF31B1C1F18F6E300AC902B /* CustomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31B1B1F18F6E300AC902B /* CustomService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		DA9B487A1F01209D0037E01A /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		DA9B487C1F01209D0037E01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9B488F1F0136500037E01A /* Hasura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hasura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF31B1B1F18F6E300AC902B /* CustomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				DA6DF1DE1F0F687000F41AAC /* Extensions.swift */,
 				DA6DF1E81F0F697C00F41AAC /* AuthenticationViewController.swift */,
 				DA6DF1E91F0F697C00F41AAC /* TodoViewController.swift */,
+				DAF31B1B1F18F6E300AC902B /* CustomService.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				DA6DF1E21F0F689A00F41AAC /* TodoRecord.swift in Sources */,
 				DA6DF1DF1F0F687000F41AAC /* Extensions.swift in Sources */,
+				DAF31B1C1F18F6E300AC902B /* CustomService.swift in Sources */,
 				DA6DF1EB1F0F697C00F41AAC /* TodoViewController.swift in Sources */,
 				DA6DF1E31F0F689A00F41AAC /* TodoReturningResponse.swift in Sources */,
 				DA6DF1EA1F0F697C00F41AAC /* AuthenticationViewController.swift in Sources */,
