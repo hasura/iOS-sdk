@@ -9,18 +9,99 @@
 import Foundation
 import Moya
 
-//public typealias HasuraService =  Moya.TargetType
 public typealias HasuraServiceProvider = Moya.MoyaProvider
 public typealias HasuraServiceEndpoint = Moya.Endpoint
-
-public typealias HTTPMethod = Moya.Method
-public typealias ParameterEncoding = Moya.ParameterEncoding
-public typealias JSONEncoding = Moya.JSONEncoding
-public typealias URLEncoding = Moya.URLEncoding
-public typealias PropertyListEncoding = Moya.PropertyListEncoding
 public typealias DownloadType = Moya.DownloadType
 public typealias UploadType = Moya.UploadType
 public typealias Task = Moya.Task
+public typealias DownloadDestination = Moya.DownloadDestination
+public typealias MultipartFormData = Moya.MultipartFormData
+
+//Parameter Encoding
+public enum ParameterEncoding {
+    case json
+    case url
+    case propertyList
+}
+
+
+//HTTP methods
+public enum HTTPMethod: String {
+    case options = "OPTIONS"
+    case get     = "GET"
+    case head    = "HEAD"
+    case post    = "POST"
+    case put     = "PUT"
+    case patch   = "PATCH"
+    case delete  = "DELETE"
+    case trace   = "TRACE"
+    case connect = "CONNECT"
+}
+
+public enum FileServiceType {
+    case upload(FileServiceUploadType)
+    case download(FileServiceDownloadType)
+}
+
+
+public protocol HasuraFileService: HasuraService {
+    var type: FileServiceType { get }
+}
+
+extension FileServiceType {
+    var moya: Moya.Task {
+        switch self {
+        case .upload(let uploadType): return uploadType.moya
+        case .download(let downloadType): return downloadType.moya
+        }
+    }
+}
+
+extension HasuraFileService {
+    
+    /// The type of HTTP task to be performed.
+    var task: Moya.Task {
+        return self.type.moya
+    }
+    
+}
+
+
+/// Represents a type of upload task.
+public enum FileServiceUploadType {
+    
+    /// Upload a file.
+    case file(URL)
+    
+    /// Upload "multipart/form-data"
+    case multipart([MultipartFormData])
+}
+
+extension FileServiceUploadType {
+    
+    var moya: Moya.Task {
+        switch self {
+        case .file(let url): return Moya.Task.upload(UploadType.file(url))
+        case .multipart(let multipartData): return Moya.Task.upload(UploadType.multipart(multipartData))
+        }
+    }
+    
+}
+
+extension FileServiceDownloadType {
+    var moya: Moya.Task {
+        switch self {
+        case .request(let downloadDestination): return Moya.Task.download(DownloadType.request(downloadDestination))
+        }
+    }
+}
+
+/// Represents a type of download task.
+public enum FileServiceDownloadType {
+    
+    /// Download a file to a destination.
+    case request(DownloadDestination)
+}
 
 
 protocol MoyaHTTPMethod {
@@ -60,21 +141,10 @@ extension ParameterEncoding: MoyaParamaterEncoding {
     
 }
 
-protocol MoyaTask {
-    var moya: Moya.Task { get }
-}
-
-extension RequestType: MoyaTask {
-    var moya: Moya.Task {
-        switch self {
-        case .normal: return Moya.Task.request
-        }
-    }
-}
-
-
-protocol HasuraService: Moya.TargetType {
+public protocol HasuraService: Moya.TargetType {
     var serviceName: String { get }
+    var httpMethod: HTTPMethod { get }
+    var paramEncoding: ParameterEncoding { get }
 }
 
 extension HasuraService {
@@ -84,22 +154,30 @@ extension HasuraService {
     var baseURL: URL {
         return URL(string: "")!
     }
-
-    /// The HTTP method used in the request.
-    var method: Moya.Method { get }
     
-    /// The parameters to be encoded in the request.
-    var parameters: [String: Any]? { get }
+    /// The HTTP method used in the request.
+    var method: Moya.Method {
+        return self.httpMethod.moya
+    }
+    
     
     /// The method used for parameter encoding.
-    var parameterEncoding: ParameterEncoding { get }
+    var parameterEncoding: Moya.ParameterEncoding {
+        return self.paramEncoding.moya
+    }
     
     /// Provides stub data for use in testing.
-    var sampleData: Data { get }
+    var sampleData: Data {
+        return Data()
+    }
     
     /// The type of HTTP task to be performed.
-    var task: Task { get }
-
+    var task: Moya.Task {
+        return .request
+    }
     
+    var validate: Bool {
+        return true
+    }
 }
 

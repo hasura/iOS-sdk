@@ -11,7 +11,6 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-
 extension Error {
     func getHasuraError() -> HasuraError {
         return HasuraError.unknown()
@@ -158,7 +157,7 @@ public class HTTPManager {
         headers: HTTPHeaders? = nil
         ) -> HasuraDataRequest {
         
-        return HasuraDataRequest(request: Alamofire.request(url, method: httpMethod, parameters: params, encoding: JSONEncoding.default, headers: headers))
+        return HasuraDataRequest(request: Alamofire.request(url, method: httpMethod.moya, parameters: params, encoding: JSONEncoding.default, headers: headers))
     }
     
     @discardableResult
@@ -168,7 +167,7 @@ public class HTTPManager {
         headers: HTTPHeaders? = nil
         ) -> HasuraUploadFileRequest {
         
-        return HasuraUploadFileRequest(request: Alamofire.upload(data, to: url, method: HTTPMethod.post, headers: headers))
+        return HasuraUploadFileRequest(request: Alamofire.upload(data, to: url, method: HTTPMethod.post.moya, headers: headers))
     }
     
     @discardableResult

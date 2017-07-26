@@ -68,18 +68,6 @@ class HasuraClientImpl: HasuraClient, AuthHeaderProvider {
         self.shouldEnableLogs = shouldEnableLogs
         self.projectConfig = projectConfig
         self.currentUser = HasuraUserImpl(authUrl: projectConfig.authUrl, shouldPopulate: true)
-        
-        let provider = HasuraServiceProvider<CustomService>(endpointClosure: { (service: HasuraService) in
-            return HasuraServiceEndpoint(
-                url: projectConfig.getCustomServiceBaseURL(serviceName: service.serviceName),
-                sampleResponseClosure: { .networkResponse(200, service.sampleData) },
-                method: service.method,
-                parameters: service.parameters,
-                parameterEncoding: service.parameterEncoding
-            )
-        })
-        
-        
     }
     
     internal func getAuthHeaders(role: String? = nil) -> HTTPHeaders? {
@@ -118,8 +106,6 @@ class HasuraClientImpl: HasuraClient, AuthHeaderProvider {
         var role: String
         var headers: HTTPHeaders?
         var filestoreUrl: String
-        
-        let provider = HasuraServiceProvider<CustomService>()
         
         init(role: String, headers: HTTPHeaders?, filestoreUrl: String) {
             self.role = role
