@@ -8,6 +8,12 @@
 
 import Foundation
 
+public enum HasuraInitError: Error {
+    case noProjectOrCustomDomainSpecified
+    case noProjectConfigProvided
+    case notInitialised
+}
+
 public enum HasuraError: Error {
     
     case invalidURL(url: String)

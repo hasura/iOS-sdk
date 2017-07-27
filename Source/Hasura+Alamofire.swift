@@ -11,21 +11,6 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-extension Error {
-    func getHasuraError() -> HasuraError {
-        return HasuraError.unknown()
-    }
-}
-
-extension Data {
-    func toJsonString() -> String {
-        guard let jsonString = String(data: self, encoding: .utf8) else {
-            return "No JSON string for this data"
-        }
-        return jsonString
-    }
-}
-
 public struct HasuraDownloadFileRequest {
     
     var downloadRequest: DownloadRequest
@@ -157,7 +142,7 @@ public class HTTPManager {
         headers: HTTPHeaders? = nil
         ) -> HasuraDataRequest {
         
-        return HasuraDataRequest(request: Alamofire.request(url, method: httpMethod.moya, parameters: params, encoding: JSONEncoding.default, headers: headers))
+        return HasuraDataRequest(request: Alamofire.request(url, method: httpMethod, parameters: params, encoding: JSONEncoding.default, headers: headers))
     }
     
     @discardableResult
@@ -167,7 +152,7 @@ public class HTTPManager {
         headers: HTTPHeaders? = nil
         ) -> HasuraUploadFileRequest {
         
-        return HasuraUploadFileRequest(request: Alamofire.upload(data, to: url, method: HTTPMethod.post.moya, headers: headers))
+        return HasuraUploadFileRequest(request: Alamofire.upload(data, to: url, method: HTTPMethod.post, headers: headers))
     }
     
     @discardableResult

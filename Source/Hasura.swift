@@ -8,12 +8,6 @@
 
 import Foundation
 
-public enum HasuraInitError: Error {
-    case noProjectOrCustomDomainSpecified
-    case noProjectConfigProvided
-    case notInitialised
-}
-
 struct Defaults {
     static let IS_ENABLED_OVER_HTTP = false
     static let DEFAULT_ROLE  = "user"

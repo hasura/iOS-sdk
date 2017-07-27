@@ -12,5 +12,19 @@ extension String {
     static func +(left: String, right: Int) -> String {
         return "\(left)\(right)"
     }
-    
+}
+
+extension Error {
+    func getHasuraError() -> HasuraError {
+        return HasuraError.unknown()
+    }
+}
+
+extension Data {
+    func toJsonString() -> String {
+        guard let jsonString = String(data: self, encoding: .utf8) else {
+            return "No JSON string for this data"
+        }
+        return jsonString
+    }
 }

@@ -135,54 +135,151 @@ extension HasuraUserImpl {
     
     public func sendOtpToMobile(completionHandler: @escaping OtpSendingStatusResponse) {
         HTTPManager.request(url: "/otp-login", httpMethod: .post, params: getAuthRequestBody().toJSON(), headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if let _ = response {
+                    completionHandler(true, nil)
+                } else if let error = error {
+                    completionHandler(false, error)
+                } else {
+                    completionHandler(false, HasuraError.unknown())
+                }
+        }
     }
     
-    public func confirmMobileAndLogin(completionHandler: @escaping OtpVerificationApiResponse) {
-        
+    public func confirmMobileAndLogin(otp: String, completionHandler: @escaping LoginApiResponse) {
+        confirmMobile(otp: otp) { (isSentSuccessfully, error) in
+            if isSentSuccessfully {
+                self.login(completionHandler: { (isSuccessful, error) in
+                    completionHandler(isSuccessful, error)
+                })
+            } else {
+                completionHandler(false, error)
+            }
+        }
     }
     
     public func confirmMobile(otp: String, completionHandler: @escaping OtpVerificationApiResponse) {
-        
+        HTTPManager.request(url: "mobile/confirm", httpMethod: .post, params: ConfirmMobileRequest(mobile: mobile!, otp: otp).toJSON(), headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if response != nil {
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func resendOTPForMobileConfirmation(completionHandler: @escaping OtpSendingStatusResponse) {
-        
+        HTTPManager.request(url: "mobile/resend-otp", httpMethod: .post, params: ["mobile": mobile!], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if response != nil {
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func resendOTPForLogin(completionHandler: @escaping OtpSendingStatusResponse) {
-        
+        sendOtpToMobile(completionHandler: completionHandler)
     }
     
     public func resendVerificationEmail(completionHandler: @escaping VerifyEmailSendingApiResponse) {
-        
+        HTTPManager.request(url: "email/resend-verify", httpMethod: .post, params: ["email" : email!], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if response != nil {
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
 }
 
 extension HasuraUserImpl {
     
-    public func sync(completionHandler: AuthenticatedApiResponse) {
-        
+    public func sync(completionHandler: @escaping AuthenticatedApiResponse) {
+        HTTPManager.request(url: "user/account/info", httpMethod: .get, params: nil, headers: nil)
+            .responseObject { (response: AuthResponse?, error) in
+                if let response = response {
+                    self.id = response.hasuraId
+                    self.authToken = response.authToken
+                    self.roles = response.roles
+                    self.save()
+                    completionHandler(true, nil)
+                } else if let error = error {
+                    completionHandler(false, error)
+                } else {
+                    completionHandler(false, HasuraError.unknown())
+                }
+        }
     }
     
     public func changePassword(newPassword: String, completionHandler: AuthenticatedApiResponse) {
-        
+        HTTPManager.request(url: "user/password/change", httpMethod: .post, params: ["password" : password!, "new_password" : newPassword], headers: nil)
+            .responseObject { (response: ChangePasswordResponse?, error) in
+                if let response = response {
+                    self.authToken = response.authToken!
+                    self.password = newPassword
+                    self.save()
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func changeEmail(newEmail: String, ompletionHandler: AuthenticatedApiResponse) {
-        
+        HTTPManager.request(url: "user/email/change", httpMethod: .post, params: ["email" : newEmail], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if let response = response {
+                    self.email = newEmail
+                    self.save()
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func changeMobile(newMobile: String, completionHandler: AuthenticatedApiResponse) {
-        
+        HTTPManager.request(url: "user/mobile/change", httpMethod: .post, params: ["mobile" : newMobile], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if let response = response {
+                    self.mobile = newMobile
+                    self.save()
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func changeUsername(newUsername: String, completionHandler: AuthenticatedApiResponse) {
-        
+        HTTPManager.request(url: "user/account/change-username", httpMethod: .post, params: ["username" : newUsername], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if let response = response {
+                    self.username = newUsername
+                    self.save()
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
-    public func deleteAccount(completionHandler: AuthenticatedApiResponse) {
-        
+    public func deleteAccount(password: String, completionHandler: AuthenticatedApiResponse) {
+        HTTPManager.request(url: "user/account/delete", httpMethod: .post, params: ["password" : password], headers: nil)
+            .responseObject { (response: MessageResponse?, error) in
+                if let response = response {
+                    self.clearAllData()
+                    self.save()
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
+                }
+        }
     }
     
     public func logout(completionHandler: @escaping AuthenticatedApiResponse) {

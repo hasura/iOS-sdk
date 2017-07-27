@@ -17,7 +17,7 @@ public protocol AuthenticatedUserApi {
     func changeEmail(newEmail: String, ompletionHandler: AuthenticatedApiResponse)
     func changeMobile(newMobile: String, completionHandler: AuthenticatedApiResponse)
     func changeUsername(newUsername: String, completionHandler: AuthenticatedApiResponse)
-    func deleteAccount(completionHandler: AuthenticatedApiResponse)
+    func deleteAccount(password: String, completionHandler: AuthenticatedApiResponse)
     func logout(completionHandler: @escaping AuthenticatedApiResponse)
     
 }

@@ -43,7 +43,7 @@ public protocol AnonymousUserApi {
     func login(completionHandler: @escaping LoginApiResponse)
     func otpLogin(otp: String, completionHandler: @escaping LoginApiResponse)
     func sendOtpToMobile(completionHandler: @escaping OtpSendingStatusResponse)
-    func confirmMobileAndLogin(completionHandler: @escaping OtpVerificationApiResponse)
+    func confirmMobileAndLogin(otp: String, completionHandler: @escaping LoginApiResponse)
     
     func confirmMobile(otp: String, completionHandler: @escaping OtpVerificationApiResponse)
     

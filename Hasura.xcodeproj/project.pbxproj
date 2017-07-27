@@ -20,7 +20,6 @@
 		DADC33E21F29EEC4001A7C13 /* FileUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */; };
 		DADC33E31F29EEC4001A7C13 /* Hasura.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D21F29EEC3001A7C13 /* Hasura.swift */; };
 		DADC33E41F29EEC4001A7C13 /* Hasura+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */; };
-		DADC33E51F29EEC4001A7C13 /* Hasura+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */; };
 		DADC33E61F29EEC4001A7C13 /* HasuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */; };
 		DADC33E71F29EEC4001A7C13 /* HasuraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D61F29EEC3001A7C13 /* HasuraError.swift */; };
 		DADC33E81F29EEC4001A7C13 /* HasuraErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */; };
@@ -29,8 +28,8 @@
 		DADC33EB1F29EEC4001A7C13 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */; };
 		DADC33EC1F29EEC4001A7C13 /* OfflineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */; };
 		DADC33F11F29EEE2001A7C13 /* iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = DADC33EF1F29EEE2001A7C13 /* iOS_SDK.h */; };
-		DAF31A6D1F173CE100AC902B /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31A661F173CCD00AC902B /* Moya.framework */; };
-		DAF31AB21F17872D00AC902B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31AA91F17871600AC902B /* Result.framework */; };
+		DADC34461F29F3D7001A7C13 /* ConfirmMobileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC34451F29F3D7001A7C13 /* ConfirmMobileRequest.swift */; };
+		DADC344A1F2A04DD001A7C13 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC34491F2A04DD001A7C13 /* ChangePasswordResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,83 +187,6 @@
 			remoteGlobalIDString = DA9B47CD1F00F4700037E01A;
 			remoteInfo = iOS_SDK;
 		};
-		DAF31A651F173CCD00AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B21D17C968B806C86282B01B;
-			remoteInfo = Moya;
-		};
-		DAF31A671F173CCD00AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BA127C215F50BFF312C0335E;
-			remoteInfo = ReactiveMoya;
-		};
-		DAF31A691F173CCD00AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3EDA8304EBD76134BFF3257E;
-			remoteInfo = RxMoya;
-		};
-		DAF31A6B1F173CCD00AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 81B183EB21799B016A9E92D2;
-			remoteInfo = MoyaTests;
-		};
-		DAF31AA41F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480571A9572F5009D7229;
-			remoteInfo = "Result-Mac";
-		};
-		DAF31AA61F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480671A9572F5009D7229;
-			remoteInfo = "Result-MacTests";
-		};
-		DAF31AA81F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D454807D1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
-		DAF31AAA1F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480871A957362009D7229;
-			remoteInfo = "Result-iOSTests";
-		};
-		DAF31AAC1F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE471BA280DC00130C48;
-			remoteInfo = "Result-tvOS";
-		};
-		DAF31AAE1F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE541BA280E000130C48;
-			remoteInfo = "Result-tvOSTests";
-		};
-		DAF31AB01F17871600AC902B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF31A801F17871600AC902B /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D03579A31B2B788F005D26AE;
-			remoteInfo = "Result-watchOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -283,7 +205,6 @@
 		DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUploadResponse.swift; path = Source/FileUploadResponse.swift; sourceTree = SOURCE_ROOT; };
 		DADC33D21F29EEC3001A7C13 /* Hasura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hasura.swift; path = Source/Hasura.swift; sourceTree = SOURCE_ROOT; };
 		DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hasura+Alamofire.swift"; path = "Source/Hasura+Alamofire.swift"; sourceTree = SOURCE_ROOT; };
-		DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hasura+Moya.swift"; path = "Source/Hasura+Moya.swift"; sourceTree = SOURCE_ROOT; };
 		DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraClient.swift; path = Source/HasuraClient.swift; sourceTree = SOURCE_ROOT; };
 		DADC33D61F29EEC3001A7C13 /* HasuraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraError.swift; path = Source/HasuraError.swift; sourceTree = SOURCE_ROOT; };
 		DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraErrorResponse.swift; path = Source/HasuraErrorResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -293,8 +214,8 @@
 		DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineStore.swift; path = Source/OfflineStore.swift; sourceTree = SOURCE_ROOT; };
 		DADC33EE1F29EEE2001A7C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Source/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		DADC33EF1F29EEE2001A7C13 /* iOS_SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS_SDK.h; path = "Source/Supporting Files/iOS_SDK.h"; sourceTree = SOURCE_ROOT; };
-		DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moya.xcodeproj; path = ../../../Moya/Moya.xcodeproj; sourceTree = "<group>"; };
-		DAF31A801F17871600AC902B /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = ../../../Result/Result.xcodeproj; sourceTree = "<group>"; };
+		DADC34451F29F3D7001A7C13 /* ConfirmMobileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmMobileRequest.swift; sourceTree = SOURCE_ROOT; };
+		DADC34491F2A04DD001A7C13 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,8 +223,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF31AB21F17872D00AC902B /* Result.framework in Frameworks */,
-				DAF31A6D1F173CE100AC902B /* Moya.framework in Frameworks */,
 				DA9608F31F05008F009DA4F4 /* ObjectMapper.framework in Frameworks */,
 				DA9608F21F05008B009DA4F4 /* AlamofireObjectMapper.framework in Frameworks */,
 				DA9608BD1F04DE2C009DA4F4 /* Alamofire.framework in Frameworks */,
@@ -373,8 +292,6 @@
 		DA9B47C41F00F4700037E01A = {
 			isa = PBXGroup;
 			children = (
-				DAF31A801F17871600AC902B /* Result.xcodeproj */,
-				DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */,
 				DA9608DA1F05005B009DA4F4 /* ObjectMapper.xcodeproj */,
 				DA9608C01F050055009DA4F4 /* AlamofireObjectMapper.xcodeproj */,
 				DA9608A41F04236B009DA4F4 /* Alamofire.xcodeproj */,
@@ -398,21 +315,16 @@
 			isa = PBXGroup;
 			children = (
 				DADC33F21F29EEE9001A7C13 /* Supporting Files */,
+				DADC34431F29F083001A7C13 /* Models */,
 				DADC33CC1F29EEC3001A7C13 /* AnonymousUserApi.swift */,
 				DADC33CD1F29EEC3001A7C13 /* AuthenticatedUserApi.swift */,
-				DADC33CE1F29EEC3001A7C13 /* AuthRequest.swift */,
-				DADC33CF1F29EEC3001A7C13 /* AuthResponse.swift */,
 				DADC33D01F29EEC3001A7C13 /* Extensions.swift */,
-				DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */,
 				DADC33D21F29EEC3001A7C13 /* Hasura.swift */,
 				DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */,
-				DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */,
 				DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */,
 				DADC33D61F29EEC3001A7C13 /* HasuraError.swift */,
-				DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */,
 				DADC33D81F29EEC3001A7C13 /* HasuraUser.swift */,
 				DADC33D91F29EEC3001A7C13 /* JSONType.swift */,
-				DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */,
 				DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */,
 			);
 			name = Sources;
@@ -437,29 +349,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DAF31A5F1F173CCD00AC902B /* Products */ = {
+		DADC34431F29F083001A7C13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DAF31A661F173CCD00AC902B /* Moya.framework */,
-				DAF31A681F173CCD00AC902B /* ReactiveMoya.framework */,
-				DAF31A6A1F173CCD00AC902B /* RxMoya.framework */,
-				DAF31A6C1F173CCD00AC902B /* MoyaTests.xctest */,
+				DADC33CE1F29EEC3001A7C13 /* AuthRequest.swift */,
+				DADC33CF1F29EEC3001A7C13 /* AuthResponse.swift */,
+				DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */,
+				DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */,
+				DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */,
+				DADC34451F29F3D7001A7C13 /* ConfirmMobileRequest.swift */,
+				DADC34491F2A04DD001A7C13 /* ChangePasswordResponse.swift */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DAF31A811F17871600AC902B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DAF31AA51F17871600AC902B /* Result.framework */,
-				DAF31AA71F17871600AC902B /* Result-MacTests.xctest */,
-				DAF31AA91F17871600AC902B /* Result.framework */,
-				DAF31AAB1F17871600AC902B /* Result-iOSTests.xctest */,
-				DAF31AAD1F17871600AC902B /* Result.framework */,
-				DAF31AAF1F17871600AC902B /* Result-tvOSTests.xctest */,
-				DAF31AB11F17871600AC902B /* Result.framework */,
-			);
-			name = Products;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,16 +456,8 @@
 					ProjectRef = DA9608C01F050055009DA4F4 /* AlamofireObjectMapper.xcodeproj */;
 				},
 				{
-					ProductGroup = DAF31A5F1F173CCD00AC902B /* Products */;
-					ProjectRef = DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */;
-				},
-				{
 					ProductGroup = DA9608DB1F05005B009DA4F4 /* Products */;
 					ProjectRef = DA9608DA1F05005B009DA4F4 /* ObjectMapper.xcodeproj */;
-				},
-				{
-					ProductGroup = DAF31A811F17871600AC902B /* Products */;
-					ProjectRef = DAF31A801F17871600AC902B /* Result.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -723,83 +616,6 @@
 			remoteRef = DA9608F01F05005C009DA4F4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DAF31A661F173CCD00AC902B /* Moya.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Moya.framework;
-			remoteRef = DAF31A651F173CCD00AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31A681F173CCD00AC902B /* ReactiveMoya.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveMoya.framework;
-			remoteRef = DAF31A671F173CCD00AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31A6A1F173CCD00AC902B /* RxMoya.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RxMoya.framework;
-			remoteRef = DAF31A691F173CCD00AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31A6C1F173CCD00AC902B /* MoyaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MoyaTests.xctest;
-			remoteRef = DAF31A6B1F173CCD00AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AA51F17871600AC902B /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = DAF31AA41F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AA71F17871600AC902B /* Result-MacTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-MacTests.xctest";
-			remoteRef = DAF31AA61F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AA91F17871600AC902B /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = DAF31AA81F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AAB1F17871600AC902B /* Result-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-iOSTests.xctest";
-			remoteRef = DAF31AAA1F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AAD1F17871600AC902B /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = DAF31AAC1F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AAF1F17871600AC902B /* Result-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-tvOSTests.xctest";
-			remoteRef = DAF31AAE1F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DAF31AB11F17871600AC902B /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = DAF31AB01F17871600AC902B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -828,8 +644,10 @@
 				DADC33E11F29EEC4001A7C13 /* Extensions.swift in Sources */,
 				DADC33E31F29EEC4001A7C13 /* Hasura.swift in Sources */,
 				DADC33E91F29EEC4001A7C13 /* HasuraUser.swift in Sources */,
+				DADC34461F29F3D7001A7C13 /* ConfirmMobileRequest.swift in Sources */,
 				DADC33DF1F29EEC4001A7C13 /* AuthRequest.swift in Sources */,
 				DADC33EA1F29EEC4001A7C13 /* JSONType.swift in Sources */,
+				DADC344A1F2A04DD001A7C13 /* ChangePasswordResponse.swift in Sources */,
 				DADC33E71F29EEC4001A7C13 /* HasuraError.swift in Sources */,
 				DADC33DD1F29EEC3001A7C13 /* AnonymousUserApi.swift in Sources */,
 				DADC33E01F29EEC4001A7C13 /* AuthResponse.swift in Sources */,
@@ -838,7 +656,6 @@
 				DADC33DE1F29EEC3001A7C13 /* AuthenticatedUserApi.swift in Sources */,
 				DADC33E81F29EEC4001A7C13 /* HasuraErrorResponse.swift in Sources */,
 				DADC33EC1F29EEC4001A7C13 /* OfflineStore.swift in Sources */,
-				DADC33E51F29EEC4001A7C13 /* Hasura+Moya.swift in Sources */,
 				DADC33E21F29EEC4001A7C13 /* FileUploadResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
