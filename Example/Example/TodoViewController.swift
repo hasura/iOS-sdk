@@ -15,12 +15,6 @@ class TodoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
-        
         //Fetch all todos for the user
         client.useDataService(params: [
             "type" : "select",
@@ -31,7 +25,7 @@ class TodoViewController: UITableViewController {
                     "user_id" : user.id!
                 ]
             ]
-            ]).responseArray { (response: [TodoRecord]?, error: HasuraError?) in
+        ]).responseArray { (response: [TodoRecord]?, error: HasuraError?) in
                 if let response = response {
                     self.data = response
                     self.tableView.reloadData()
@@ -39,8 +33,6 @@ class TodoViewController: UITableViewController {
                     self.handleError(error: error)
                 }
         }
-        
-
         
     }
     

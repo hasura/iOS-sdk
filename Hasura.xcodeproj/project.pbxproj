@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA6DF1D91F0F507100F41AAC /* FileUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DF1D81F0F507100F41AAC /* FileUploadResponse.swift */; };
 		DA9608BD1F04DE2C009DA4F4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608B01F04236B009DA4F4 /* Alamofire.framework */; };
 		DA9608F21F05008B009DA4F4 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608CD1F050055009DA4F4 /* AlamofireObjectMapper.framework */; };
 		DA9608F31F05008F009DA4F4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608E51F05005C009DA4F4 /* ObjectMapper.framework */; };
-		DA9608F51F0A4F95009DA4F4 /* AnonymousUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */; };
-		DA9608F71F0A5481009DA4F4 /* AuthenticatedUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */; };
-		DA9608F91F0A57A4009DA4F4 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9608F81F0A57A4009DA4F4 /* AuthResponse.swift */; };
-		DA9608FB1F0A57C1009DA4F4 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9608FA1F0A57C1009DA4F4 /* MessageResponse.swift */; };
-		DA9608FD1F0A7740009DA4F4 /* Hasura.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9608FC1F0A7740009DA4F4 /* Hasura.swift */; };
 		DA9B47D81F00F4700037E01A /* Hasura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B47CE1F00F4700037E01A /* Hasura.framework */; };
 		DA9B47DD1F00F4700037E01A /* iOS_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B47DC1F00F4700037E01A /* iOS_SDKTests.swift */; };
-		DA9B47DF1F00F4700037E01A /* iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = DA9B47D11F00F4700037E01A /* iOS_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA9B47EB1F00F4900037E01A /* HasuraUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B47E81F00F4900037E01A /* HasuraUser.swift */; };
-		DA9B47ED1F00F4900037E01A /* HasuraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B47EA1F00F4900037E01A /* HasuraError.swift */; };
-		DA9B48981F0253580037E01A /* HasuraErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B48971F0253580037E01A /* HasuraErrorResponse.swift */; };
-		DA9B489A1F02584D0037E01A /* Hasura+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B48991F02584D0037E01A /* Hasura+Alamofire.swift */; };
-		DA9B48A01F02F5960037E01A /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B489F1F02F5960037E01A /* AuthRequest.swift */; };
-		DA9C3C4C1F0A88A6006EB049 /* HasuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */; };
-		DA9C3C641F0CC157006EB049 /* OfflineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3C631F0CC157006EB049 /* OfflineStore.swift */; };
+		DADC33DD1F29EEC3001A7C13 /* AnonymousUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33CC1F29EEC3001A7C13 /* AnonymousUserApi.swift */; };
+		DADC33DE1F29EEC3001A7C13 /* AuthenticatedUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33CD1F29EEC3001A7C13 /* AuthenticatedUserApi.swift */; };
+		DADC33DF1F29EEC4001A7C13 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33CE1F29EEC3001A7C13 /* AuthRequest.swift */; };
+		DADC33E01F29EEC4001A7C13 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33CF1F29EEC3001A7C13 /* AuthResponse.swift */; };
+		DADC33E11F29EEC4001A7C13 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D01F29EEC3001A7C13 /* Extensions.swift */; };
+		DADC33E21F29EEC4001A7C13 /* FileUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */; };
+		DADC33E31F29EEC4001A7C13 /* Hasura.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D21F29EEC3001A7C13 /* Hasura.swift */; };
+		DADC33E41F29EEC4001A7C13 /* Hasura+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */; };
+		DADC33E51F29EEC4001A7C13 /* Hasura+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */; };
+		DADC33E61F29EEC4001A7C13 /* HasuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */; };
+		DADC33E71F29EEC4001A7C13 /* HasuraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D61F29EEC3001A7C13 /* HasuraError.swift */; };
+		DADC33E81F29EEC4001A7C13 /* HasuraErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */; };
+		DADC33E91F29EEC4001A7C13 /* HasuraUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D81F29EEC3001A7C13 /* HasuraUser.swift */; };
+		DADC33EA1F29EEC4001A7C13 /* JSONType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33D91F29EEC3001A7C13 /* JSONType.swift */; };
+		DADC33EB1F29EEC4001A7C13 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */; };
+		DADC33EC1F29EEC4001A7C13 /* OfflineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */; };
+		DADC33F11F29EEE2001A7C13 /* iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = DADC33EF1F29EEE2001A7C13 /* iOS_SDK.h */; };
 		DAF31A6D1F173CE100AC902B /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31A661F173CCD00AC902B /* Moya.framework */; };
 		DAF31AB21F17872D00AC902B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF31AA91F17871600AC902B /* Result.framework */; };
-		DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AE71F17AFEE00AC902B /* JSONType.swift */; };
-		DAF31AEC1F18CD6500AC902B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31AEB1F18CD6500AC902B /* Extensions.swift */; };
-		DAF31B1A1F18E36D00AC902B /* Hasura+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,33 +268,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA6DF1D81F0F507100F41AAC /* FileUploadResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadResponse.swift; sourceTree = "<group>"; };
 		DA9608A41F04236B009DA4F4 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		DA9608C01F050055009DA4F4 /* AlamofireObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireObjectMapper.xcodeproj; path = ../../../AlamofireObjectMapper/AlamofireObjectMapper.xcodeproj; sourceTree = "<group>"; };
 		DA9608DA1F05005B009DA4F4 /* ObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectMapper.xcodeproj; path = ../../../ObjectMapper/ObjectMapper.xcodeproj; sourceTree = "<group>"; };
-		DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonymousUserApi.swift; sourceTree = "<group>"; };
-		DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserApi.swift; sourceTree = "<group>"; };
-		DA9608F81F0A57A4009DA4F4 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
-		DA9608FA1F0A57C1009DA4F4 /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
-		DA9608FC1F0A7740009DA4F4 /* Hasura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hasura.swift; sourceTree = "<group>"; };
 		DA9B47CE1F00F4700037E01A /* Hasura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hasura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA9B47D11F00F4700037E01A /* iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_SDK.h; sourceTree = "<group>"; };
-		DA9B47D21F00F4700037E01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9B47D71F00F4700037E01A /* HasuraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HasuraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9B47DC1F00F4700037E01A /* iOS_SDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SDKTests.swift; sourceTree = "<group>"; };
 		DA9B47DE1F00F4700037E01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA9B47E81F00F4900037E01A /* HasuraUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraUser.swift; sourceTree = "<group>"; };
-		DA9B47EA1F00F4900037E01A /* HasuraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraError.swift; sourceTree = "<group>"; };
-		DA9B48971F0253580037E01A /* HasuraErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraErrorResponse.swift; sourceTree = "<group>"; };
-		DA9B48991F02584D0037E01A /* Hasura+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hasura+Alamofire.swift"; sourceTree = "<group>"; };
-		DA9B489F1F02F5960037E01A /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
-		DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasuraClient.swift; sourceTree = "<group>"; };
-		DA9C3C631F0CC157006EB049 /* OfflineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineStore.swift; sourceTree = "<group>"; };
+		DADC33CC1F29EEC3001A7C13 /* AnonymousUserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnonymousUserApi.swift; path = Source/AnonymousUserApi.swift; sourceTree = SOURCE_ROOT; };
+		DADC33CD1F29EEC3001A7C13 /* AuthenticatedUserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticatedUserApi.swift; path = Source/AuthenticatedUserApi.swift; sourceTree = SOURCE_ROOT; };
+		DADC33CE1F29EEC3001A7C13 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRequest.swift; path = Source/AuthRequest.swift; sourceTree = SOURCE_ROOT; };
+		DADC33CF1F29EEC3001A7C13 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthResponse.swift; path = Source/AuthResponse.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D01F29EEC3001A7C13 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUploadResponse.swift; path = Source/FileUploadResponse.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D21F29EEC3001A7C13 /* Hasura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hasura.swift; path = Source/Hasura.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hasura+Alamofire.swift"; path = "Source/Hasura+Alamofire.swift"; sourceTree = SOURCE_ROOT; };
+		DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hasura+Moya.swift"; path = "Source/Hasura+Moya.swift"; sourceTree = SOURCE_ROOT; };
+		DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraClient.swift; path = Source/HasuraClient.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D61F29EEC3001A7C13 /* HasuraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraError.swift; path = Source/HasuraError.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraErrorResponse.swift; path = Source/HasuraErrorResponse.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D81F29EEC3001A7C13 /* HasuraUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraUser.swift; path = Source/HasuraUser.swift; sourceTree = SOURCE_ROOT; };
+		DADC33D91F29EEC3001A7C13 /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONType.swift; path = Source/JSONType.swift; sourceTree = SOURCE_ROOT; };
+		DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageResponse.swift; path = Source/MessageResponse.swift; sourceTree = SOURCE_ROOT; };
+		DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineStore.swift; path = Source/OfflineStore.swift; sourceTree = SOURCE_ROOT; };
+		DADC33EE1F29EEE2001A7C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Source/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		DADC33EF1F29EEE2001A7C13 /* iOS_SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS_SDK.h; path = "Source/Supporting Files/iOS_SDK.h"; sourceTree = SOURCE_ROOT; };
 		DAF31A5E1F173CCD00AC902B /* Moya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moya.xcodeproj; path = ../../../Moya/Moya.xcodeproj; sourceTree = "<group>"; };
 		DAF31A801F17871600AC902B /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = ../../../Result/Result.xcodeproj; sourceTree = "<group>"; };
-		DAF31AE71F17AFEE00AC902B /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONType.swift; sourceTree = "<group>"; };
-		DAF31AEB1F18CD6500AC902B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hasura+Moya.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,15 +321,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA6DF1D71F0E7AB800F41AAC /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				DA9B47D11F00F4700037E01A /* iOS_SDK.h */,
-				DA9B47D21F00F4700037E01A /* Info.plist */,
-			);
-			name = SupportingFiles;
-			sourceTree = "<group>";
-		};
 		DA9608A31F04236B009DA4F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,7 +378,7 @@
 				DA9608DA1F05005B009DA4F4 /* ObjectMapper.xcodeproj */,
 				DA9608C01F050055009DA4F4 /* AlamofireObjectMapper.xcodeproj */,
 				DA9608A41F04236B009DA4F4 /* Alamofire.xcodeproj */,
-				DA9B47D01F00F4700037E01A /* Hasura */,
+				DA9B47D01F00F4700037E01A /* Sources */,
 				DA9B47DB1F00F4700037E01A /* iOS_SDKTests */,
 				DA9B47CF1F00F4700037E01A /* Products */,
 				DA9608A31F04236B009DA4F4 /* Frameworks */,
@@ -403,24 +394,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA9B47D01F00F4700037E01A /* Hasura */ = {
+		DA9B47D01F00F4700037E01A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				DA9C3C4B1F0A88A6006EB049 /* HasuraClient.swift */,
-				DAF31AE71F17AFEE00AC902B /* JSONType.swift */,
-				DA9608FC1F0A7740009DA4F4 /* Hasura.swift */,
-				DAF31AEB1F18CD6500AC902B /* Extensions.swift */,
-				DA9B48991F02584D0037E01A /* Hasura+Alamofire.swift */,
-				DA9B47E81F00F4900037E01A /* HasuraUser.swift */,
-				DA9B47EA1F00F4900037E01A /* HasuraError.swift */,
-				DA9608F41F0A4F95009DA4F4 /* AnonymousUserApi.swift */,
-				DA9608F61F0A5481009DA4F4 /* AuthenticatedUserApi.swift */,
-				DA9C3C631F0CC157006EB049 /* OfflineStore.swift */,
-				DAF31B191F18E36D00AC902B /* Hasura+Moya.swift */,
-				DA9C3C651F0D25A6006EB049 /* Model */,
-				DA6DF1D71F0E7AB800F41AAC /* SupportingFiles */,
+				DADC33F21F29EEE9001A7C13 /* Supporting Files */,
+				DADC33CC1F29EEC3001A7C13 /* AnonymousUserApi.swift */,
+				DADC33CD1F29EEC3001A7C13 /* AuthenticatedUserApi.swift */,
+				DADC33CE1F29EEC3001A7C13 /* AuthRequest.swift */,
+				DADC33CF1F29EEC3001A7C13 /* AuthResponse.swift */,
+				DADC33D01F29EEC3001A7C13 /* Extensions.swift */,
+				DADC33D11F29EEC3001A7C13 /* FileUploadResponse.swift */,
+				DADC33D21F29EEC3001A7C13 /* Hasura.swift */,
+				DADC33D31F29EEC3001A7C13 /* Hasura+Alamofire.swift */,
+				DADC33D41F29EEC3001A7C13 /* Hasura+Moya.swift */,
+				DADC33D51F29EEC3001A7C13 /* HasuraClient.swift */,
+				DADC33D61F29EEC3001A7C13 /* HasuraError.swift */,
+				DADC33D71F29EEC3001A7C13 /* HasuraErrorResponse.swift */,
+				DADC33D81F29EEC3001A7C13 /* HasuraUser.swift */,
+				DADC33D91F29EEC3001A7C13 /* JSONType.swift */,
+				DADC33DA1F29EEC3001A7C13 /* MessageResponse.swift */,
+				DADC33DB1F29EEC3001A7C13 /* OfflineStore.swift */,
 			);
-			name = Hasura;
+			name = Sources;
 			path = iOS_SDK;
 			sourceTree = "<group>";
 		};
@@ -433,16 +428,13 @@
 			path = iOS_SDKTests;
 			sourceTree = "<group>";
 		};
-		DA9C3C651F0D25A6006EB049 /* Model */ = {
+		DADC33F21F29EEE9001A7C13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA9B48971F0253580037E01A /* HasuraErrorResponse.swift */,
-				DA9B489F1F02F5960037E01A /* AuthRequest.swift */,
-				DA9608F81F0A57A4009DA4F4 /* AuthResponse.swift */,
-				DA9608FA1F0A57C1009DA4F4 /* MessageResponse.swift */,
-				DA6DF1D81F0F507100F41AAC /* FileUploadResponse.swift */,
+				DADC33EE1F29EEE2001A7C13 /* Info.plist */,
+				DADC33EF1F29EEE2001A7C13 /* iOS_SDK.h */,
 			);
-			name = Model;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DAF31A5F1F173CCD00AC902B /* Products */ = {
@@ -477,7 +469,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA9B47DF1F00F4700037E01A /* iOS_SDK.h in Headers */,
+				DADC33F11F29EEE2001A7C13 /* iOS_SDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,22 +824,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA9B47EB1F00F4900037E01A /* HasuraUser.swift in Sources */,
-				DA9B489A1F02584D0037E01A /* Hasura+Alamofire.swift in Sources */,
-				DA9B47ED1F00F4900037E01A /* HasuraError.swift in Sources */,
-				DA9608FD1F0A7740009DA4F4 /* Hasura.swift in Sources */,
-				DA9B48981F0253580037E01A /* HasuraErrorResponse.swift in Sources */,
-				DAF31AEC1F18CD6500AC902B /* Extensions.swift in Sources */,
-				DA9608FB1F0A57C1009DA4F4 /* MessageResponse.swift in Sources */,
-				DA9B48A01F02F5960037E01A /* AuthRequest.swift in Sources */,
-				DA6DF1D91F0F507100F41AAC /* FileUploadResponse.swift in Sources */,
-				DAF31AE81F17AFEE00AC902B /* JSONType.swift in Sources */,
-				DAF31B1A1F18E36D00AC902B /* Hasura+Moya.swift in Sources */,
-				DA9608F71F0A5481009DA4F4 /* AuthenticatedUserApi.swift in Sources */,
-				DA9C3C641F0CC157006EB049 /* OfflineStore.swift in Sources */,
-				DA9608F91F0A57A4009DA4F4 /* AuthResponse.swift in Sources */,
-				DA9608F51F0A4F95009DA4F4 /* AnonymousUserApi.swift in Sources */,
-				DA9C3C4C1F0A88A6006EB049 /* HasuraClient.swift in Sources */,
+				DADC33E41F29EEC4001A7C13 /* Hasura+Alamofire.swift in Sources */,
+				DADC33E11F29EEC4001A7C13 /* Extensions.swift in Sources */,
+				DADC33E31F29EEC4001A7C13 /* Hasura.swift in Sources */,
+				DADC33E91F29EEC4001A7C13 /* HasuraUser.swift in Sources */,
+				DADC33DF1F29EEC4001A7C13 /* AuthRequest.swift in Sources */,
+				DADC33EA1F29EEC4001A7C13 /* JSONType.swift in Sources */,
+				DADC33E71F29EEC4001A7C13 /* HasuraError.swift in Sources */,
+				DADC33DD1F29EEC3001A7C13 /* AnonymousUserApi.swift in Sources */,
+				DADC33E01F29EEC4001A7C13 /* AuthResponse.swift in Sources */,
+				DADC33E61F29EEC4001A7C13 /* HasuraClient.swift in Sources */,
+				DADC33EB1F29EEC4001A7C13 /* MessageResponse.swift in Sources */,
+				DADC33DE1F29EEC3001A7C13 /* AuthenticatedUserApi.swift in Sources */,
+				DADC33E81F29EEC4001A7C13 /* HasuraErrorResponse.swift in Sources */,
+				DADC33EC1F29EEC4001A7C13 /* OfflineStore.swift in Sources */,
+				DADC33E51F29EEC4001A7C13 /* Hasura+Moya.swift in Sources */,
+				DADC33E21F29EEC4001A7C13 /* FileUploadResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,7 +973,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = iOS_SDK/Info.plist;
+				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hasura.iOS-SDK";
@@ -1002,7 +994,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = iOS_SDK/Info.plist;
+				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hasura.iOS-SDK";
