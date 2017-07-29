@@ -1,0 +1,6 @@
+framework module Hasura {
+  umbrella header "Hasura-umbrella.h"
+
+  export *
+  module * { export * }
+}

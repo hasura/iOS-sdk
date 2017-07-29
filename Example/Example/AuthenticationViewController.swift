@@ -21,10 +21,7 @@ class AuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let client = try! Hasura.getClient()
-        let user = client.currentUser
-        
+
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
@@ -32,7 +29,16 @@ class AuthenticationViewController: UIViewController {
             navigateToTodoVC()
         }
         
-        downloadFile()
+        user.username = "jaison"
+        user.mobile = "8861503583"
+        
+        user.sendOtpToMobile { (isSuccessful, error) in
+            if isSuccessful {
+                print("OTP sent")
+            } else {
+                print("OTP error: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
     
     func downloadFile() {
@@ -40,7 +46,7 @@ class AuthenticationViewController: UIViewController {
         activityIndicator.startAnimating()
         
         client.useFileservice(role: "customrole")
-            .downloadFile(fileId: "A274E59D-EC6E-4D2C-B926-211F8A836593")
+            .downloadFile(fileId: "4F2D59B7-7BD0-400A-9C31-F5A43F29560F")
             .response { (downloadedData, progress, error) in
                 guard progress == 100 || progress == -1 else {
                     print("Download progress: \(progress)")

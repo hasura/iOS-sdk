@@ -10,10 +10,10 @@ import Foundation
 
 public struct HasuraErrorResponse {
     
-    var code: String
-    var message: String
+    var code: String?
+    var message: String?
     
-    init(code: String, message: String) {
+    init(code: String?, message: String?) {
         self.code = code
         self.message = message
     }

@@ -61,7 +61,7 @@ public struct HasuraUploadFileRequest {
                 print("Response")
                 print(response.debugDescription)
                 if let data = response.data {
-                    print(data.toJsonString())
+                    print(data.toString())
                 }
         }
     }
@@ -78,17 +78,15 @@ public struct HasuraDataRequest {
     
     public func responseObject<T: Mappable>(queue: DispatchQueue? = nil, callbackHandler: @escaping (T?, HasuraError?) -> Void) {
         
-        print("Request")
         print(dataRequest.debugDescription)
         
         dataRequest
             .validate()
             .responseObject { (response: DataResponse<T>) in
                 
-                print("Response")
                 print(response.debugDescription)
                 if let data = response.data {
-                    print(data.toJsonString())
+                    print(data.toString())
                 }
                 
                 switch(response.result) {

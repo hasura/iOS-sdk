@@ -134,7 +134,7 @@ extension HasuraUserImpl {
     }
     
     public func sendOtpToMobile(completionHandler: @escaping OtpSendingStatusResponse) {
-        HTTPManager.request(url: "/otp-login", httpMethod: .post, params: getAuthRequestBody().toJSON(), headers: nil)
+        HTTPManager.request(url: authUrl + "/otp-login", httpMethod: .post, params: getAuthRequestBody().toJSON(), headers: nil)
             .responseObject { (response: MessageResponse?, error) in
                 if let _ = response {
                     completionHandler(true, nil)

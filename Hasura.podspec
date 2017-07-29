@@ -1,33 +1,17 @@
 Pod::Spec.new do |spec|
   spec.name         = "Hasura"
-  spec.version      = "v0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "The iOS SDK for Hasura written in Swift"
   spec.license      = { :type => "MIT", :file => "LICENSE"}
   spec.author       = { "Jaison Titus" => "jaison@hasura.io" }
-  spec.source       = { :git => "https://github.com/hasura/iOS-sdk.git", :tag => spec.version }
-  spec.requires_arc = 'true'
-  spec.default_subspec = "Core"
+  spec.source       = { :git => "https://github.com/hasura/iOS-sdk.git", :tag => "v{spec.version}" }
+  spec.requires_arc = true
+  spec.homepage = "https://github.com/hasura/iOS-sdk"
+  spec.ios.deployment_target = '8.0'
+  spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
 
-  spec.subspec "Core" do |ss|
-    ss.source_files  = "Sources/Moya/", "Sources/Moya/Plugins/"
-    ss.dependency "Alamofire", "~> 4.1"
-    ss.dependency "Result", "~> 3.0"
-    ss.framework  = "Foundation"
-  end
-
-  s.subspec "ReactiveCocoa" do |ss|
-    ss.dependency "Moya/ReactiveSwift"
-  end
-
-  s.subspec "ReactiveSwift" do |ss|
-    ss.source_files = "Sources/ReactiveMoya/"
-    ss.dependency "Moya/Core"
-    ss.dependency "ReactiveSwift", "~> 1.1"
-  end
-
-  s.subspec "RxSwift" do |ss|
-    ss.source_files = "Sources/RxMoya/"
-    ss.dependency "Moya/Core"
-    ss.dependency "RxSwift", "~> 3.0"
-  end
+  spec.source_files  = 'Source/**/*.swift'
+  spec.dependency "Alamofire", "~> 4.1"
+  spec.dependency "ObjectMapper", "~> 2.2.7"
+  spec.dependency "AlamofireObjectMapper", "~> 4.1.0"
 end
