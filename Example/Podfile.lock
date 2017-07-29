@@ -10,18 +10,14 @@ PODS:
   - ObjectMapper (2.2.8)
 
 DEPENDENCIES:
-  - Hasura (from `../`)
-
-EXTERNAL SOURCES:
-  Hasura:
-    :path: ../
+  - Hasura (~> 0.0.2)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
-  Hasura: b5abe75003d6505ab3f99dd8e08c47af7ce2273a
+  Hasura: f10b01b094e78ab16878459707d9d9eb66b3e19a
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
 
-PODFILE CHECKSUM: 42cea6666cf3f949ddbb740cc50ab8542119b86b
+PODFILE CHECKSUM: 96582aa8d861a5644ed022fdc98684de1a50f2b0
 
 COCOAPODS: 1.1.1
