@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "The iOS SDK for Hasura written in Swift"
   spec.license      = { :type => "MIT", :file => "LICENSE"}
   spec.author       = { "Jaison Titus" => "jaison@hasura.io" }
-  spec.source       = { :git => "https://github.com/hasura/iOS-sdk.git", :tag => "v{spec.version}" }
+  spec.source       = { :git => "https://github.com/hasura/iOS-sdk.git", :tag => "v" + spec.version.to_s }
   spec.requires_arc = true
   spec.homepage = "https://github.com/hasura/iOS-sdk"
   spec.ios.deployment_target = '8.0'
