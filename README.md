@@ -35,6 +35,7 @@ Then, run the following command:
 
 ```bash
 $ pod install
+```
 
 ### Step 2 : Setup Hasura
 
