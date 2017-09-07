@@ -35,20 +35,23 @@ public protocol AnonymousUserApi {
     
     var authUrl: String { get }
     
-    func socialLogin(loginType: HasuraSocialLoginType, token: String, completionHandler: @escaping LoginApiResponse)
+    func login(provider: HasuraAuthProvider, completionHandler: @escaping LoginApiResponse)
+    func signUp(provider: HasuraAuthProvider, completionHandler: @escaping SignUpApiResponse)
     
-    func signUp(completionHandler: @escaping SignUpApiResponse)
-    func otpSignUp(completionHandler: @escaping SignUpApiResponse)
-    
-    func login(completionHandler: @escaping LoginApiResponse)
-    func otpLogin(otp: String, completionHandler: @escaping LoginApiResponse)
-    func sendOtpToMobile(completionHandler: @escaping OtpSendingStatusResponse)
-    func confirmMobileAndLogin(otp: String, completionHandler: @escaping LoginApiResponse)
-    
-    func confirmMobile(otp: String, completionHandler: @escaping OtpVerificationApiResponse)
-    
-    func resendOTPForMobileConfirmation(completionHandler: @escaping OtpSendingStatusResponse)
-    func resendOTPForLogin(completionHandler: @escaping OtpSendingStatusResponse)
-    func resendVerificationEmail(completionHandler: @escaping VerifyEmailSendingApiResponse)
+//    func socialLogin(loginType: HasuraSocialLoginType, token: String, completionHandler: @escaping LoginApiResponse)
+//    
+//    func signUp(completionHandler: @escaping SignUpApiResponse)
+//    func otpSignUp(completionHandler: @escaping SignUpApiResponse)
+//    
+//    func login(completionHandler: @escaping LoginApiResponse)
+//    func otpLogin(otp: String, completionHandler: @escaping LoginApiResponse)
+//    func sendOtpToMobile(completionHandler: @escaping OtpSendingStatusResponse)
+//    func confirmMobileAndLogin(otp: String, completionHandler: @escaping LoginApiResponse)
+//    
+//    func confirmMobile(otp: String, completionHandler: @escaping OtpVerificationApiResponse)
+//    
+//    func resendOTPForMobileConfirmation(completionHandler: @escaping OtpSendingStatusResponse)
+//    func resendOTPForLogin(completionHandler: @escaping OtpSendingStatusResponse)
+//    func resendVerificationEmail(completionHandler: @escaping VerifyEmailSendingApiResponse)
     
 }

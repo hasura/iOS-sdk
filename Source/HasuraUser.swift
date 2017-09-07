@@ -60,6 +60,15 @@ public class HasuraUserImpl: HasuraUser, AuthHeaderProvider {
         authToken = nil
     }
     
+    public func setSession(response: AuthResponse) {
+        self.id = response.hasuraId
+        self.authToken = response.authToken
+        self.roles = response.roles
+        self.username = response.username
+        self.email = response.email
+        self.mobile = response.email
+    }
+    
 }
 
 extension HasuraUserImpl {
@@ -75,13 +84,11 @@ extension HasuraUserImpl {
 
 extension HasuraUserImpl {
     
-    private func performAuthRequest(url: String, completionHandler: @escaping LoginApiResponse) {
-        HTTPManager.request(url: url, httpMethod: .post, params: getAuthRequestBody().toJSON(), headers: nil)
+    public func login(provider: HasuraAuthProvider, completionHandler: @escaping LoginApiResponse) {
+        HTTPManager.request(url: authUrl + "/login", httpMethod: .post, params: provider.getAsJSON(), headers: nil)
             .responseObject { (response: AuthResponse?, error) in
                 if let response = response {
-                    self.id = response.hasuraId
-                    self.authToken = response.authToken
-                    self.roles = response.roles
+                    self.setSession(response: response)
                     self.save()
                     completionHandler(true, nil)
                 } else if let error = error {
@@ -89,6 +96,34 @@ extension HasuraUserImpl {
                 } else {
                     completionHandler(false, HasuraError.unknown())
                 }
+        }
+    }
+    
+    public func signUp(provider: HasuraAuthProvider, completionHandler: @escaping SignUpApiResponse) {
+        HTTPManager.request(url: authUrl + "/signup", httpMethod: .post, params: provider.getAsJSON(), headers: nil)
+            .responseObject { (response: AuthResponse?, error) in
+                if let response = response {
+                    self.setSession(response: response)
+                    self.save()
+                    completionHandler(true, response.authToken == nil, nil)
+                } else if let error = error {
+                    completionHandler(false, false, error)
+                } else {
+                    completionHandler(false, false, HasuraError.unknown())
+                }
+        }
+    }
+    
+}
+
+
+
+extension HasuraUserImpl {
+    
+    private func performAuthRequest(url: String, completionHandler: @escaping LoginApiResponse) {
+        HTTPManager.request(url: url, httpMethod: .post, params: getAuthRequestBody().toJSON(), headers: nil)
+            .responseObject { (response: AuthResponse?, error) in
+                
         }
     }
     
@@ -216,71 +251,6 @@ extension HasuraUserImpl {
         }
     }
     
-    public func changePassword(newPassword: String, completionHandler: @escaping AuthenticatedApiResponse) {
-        HTTPManager.request(url: "user/password/change", httpMethod: .post, params: ["password" : password!, "new_password" : newPassword], headers: nil)
-            .responseObject { (response: ChangePasswordResponse?, error) in
-                if let response = response {
-                    self.authToken = response.authToken!
-                    self.password = newPassword
-                    self.save()
-                    completionHandler(true, nil)
-                } else {
-                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
-                }
-        }
-    }
-    
-    public func changeEmail(newEmail: String, completionHandler: @escaping AuthenticatedApiResponse) {
-        HTTPManager.request(url: "user/email/change", httpMethod: .post, params: ["email" : newEmail], headers: nil)
-            .responseObject { (response: MessageResponse?, error) in
-                if response != nil {
-                    self.email = newEmail
-                    self.save()
-                    completionHandler(true, nil)
-                } else {
-                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
-                }
-        }
-    }
-    
-    public func changeMobile(newMobile: String, completionHandler: @escaping AuthenticatedApiResponse) {
-        HTTPManager.request(url: "user/mobile/change", httpMethod: .post, params: ["mobile" : newMobile], headers: nil)
-            .responseObject { (response: MessageResponse?, error) in
-                if response != nil {
-                    self.mobile = newMobile
-                    self.save()
-                    completionHandler(true, nil)
-                } else {
-                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
-                }
-        }
-    }
-    
-    public func changeUsername(newUsername: String, completionHandler: @escaping AuthenticatedApiResponse) {
-        HTTPManager.request(url: "user/account/change-username", httpMethod: .post, params: ["username" : newUsername], headers: nil)
-            .responseObject { (response: MessageResponse?, error) in
-                if response != nil {
-                    self.username = newUsername
-                    self.save()
-                    completionHandler(true, nil)
-                } else {
-                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
-                }
-        }
-    }
-    
-    public func deleteAccount(password: String, completionHandler: @escaping AuthenticatedApiResponse) {
-        HTTPManager.request(url: "user/account/delete", httpMethod: .post, params: ["password" : password], headers: nil)
-            .responseObject { (response: MessageResponse?, error) in
-                if response != nil {
-                    self.clearAllData()
-                    self.save()
-                    completionHandler(true, nil)
-                } else {
-                    completionHandler(false, error != nil ? error! : HasuraError.unknown())
-                }
-        }
-    }
     
     public func logout(completionHandler: @escaping AuthenticatedApiResponse) {
         HTTPManager.request(url: authUrl + "/user/logout", httpMethod: .post, headers: getAuthHeaders())

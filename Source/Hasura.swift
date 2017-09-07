@@ -12,6 +12,7 @@ struct Defaults {
     static let IS_ENABLED_OVER_HTTP = false
     static let DEFAULT_ROLE  = "user"
     static let API_VERSION = 1
+    static let AUTH_API_VERSION = 2
     static let SUB_DOMAIN = ".hasura-app.io"
 }
 
@@ -24,7 +25,7 @@ public struct ProjectConfig {
     
     var authUrl: String {
         get {
-            return httpProtocol + "://auth." + baseDomain
+            return httpProtocol + "://auth." + baseDomain + "/v" + Defaults.AUTH_API_VERSION
         }
     }
     
@@ -85,6 +86,8 @@ public struct Hasura {
     var projectConfig: ProjectConfig
     var shouldEnableLogs: Bool
     private var client: HasuraClient?
+    var customAuthProviders: HasuraAuthProvider?
+    var defaultAuthProviders: [HasuraAuthProvider.Type] = [UsernameAuthProvider.self, EmailAuthProvider.self]
     
     public static func getClient() throws -> HasuraClient {
         guard let instance = `default` else {
@@ -97,15 +100,19 @@ public struct Hasura {
     }
     
     @discardableResult
-    public static func initialise(config: ProjectConfig, enableLogs:Bool = false) -> Hasura {
-        `default` =  Hasura(projectConfig: config, shouldEnableLogs: enableLogs)
+    public static func initialise(config: ProjectConfig, enableLogs:Bool = false, customAuthProvider: HasuraAuthProvider.Type? = nil) -> Hasura {
+        `default` =  Hasura(projectConfig: config, shouldEnableLogs: enableLogs, customAuthProvider: customAuthProvider)
         return `default`!
     }
     
-    fileprivate init(projectConfig: ProjectConfig, shouldEnableLogs: Bool) {
+    fileprivate init(projectConfig: ProjectConfig, shouldEnableLogs: Bool, customAuthProvider: HasuraAuthProvider.Type? = nil) {
         self.projectConfig = projectConfig
         self.shouldEnableLogs = shouldEnableLogs
         self.client = HasuraClientImpl(projectConfig: projectConfig, shouldEnableLogs: shouldEnableLogs)
+        for providers in defaultAuthProviders {
+            providers.authUrl = projectConfig.authUrl
+        }
+        customAuthProvider?.authUrl = projectConfig.authUrl
     }
     
 }
