@@ -10,6 +10,10 @@
 		DA017D401F2B929400C3DB58 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA017D3E1F2B929400C3DB58 /* ChangePasswordResponse.swift */; };
 		DA017D411F2B929400C3DB58 /* ConfirmMobileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA017D3F1F2B929400C3DB58 /* ConfirmMobileRequest.swift */; };
 		DA017D4D1F2BAB2300C3DB58 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA017D4C1F2BAB2300C3DB58 /* BaseTest.swift */; };
+		DA3283491F61881400A61C1C /* HasuraAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3283481F61881400A61C1C /* HasuraAuthProvider.swift */; };
+		DA3283621F61944300A61C1C /* UsernameAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3283611F61944300A61C1C /* UsernameAuthProvider.swift */; };
+		DA3283641F6199EE00A61C1C /* EmailAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3283631F6199EE00A61C1C /* EmailAuthProvider.swift */; };
+		DA3283661F61A2D400A61C1C /* MobileAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3283651F61A2D400A61C1C /* MobileAuthProvider.swift */; };
 		DA9608BD1F04DE2C009DA4F4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608B01F04236B009DA4F4 /* Alamofire.framework */; };
 		DA9608F21F05008B009DA4F4 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608CD1F050055009DA4F4 /* AlamofireObjectMapper.framework */; };
 		DA9608F31F05008F009DA4F4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9608E51F05005C009DA4F4 /* ObjectMapper.framework */; };
@@ -194,6 +198,10 @@
 		DA017D3E1F2B929400C3DB58 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordResponse.swift; path = Source/ChangePasswordResponse.swift; sourceTree = SOURCE_ROOT; };
 		DA017D3F1F2B929400C3DB58 /* ConfirmMobileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmMobileRequest.swift; path = Source/ConfirmMobileRequest.swift; sourceTree = SOURCE_ROOT; };
 		DA017D4C1F2BAB2300C3DB58 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		DA3283481F61881400A61C1C /* HasuraAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HasuraAuthProvider.swift; path = Source/HasuraAuthProvider.swift; sourceTree = SOURCE_ROOT; };
+		DA3283611F61944300A61C1C /* UsernameAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsernameAuthProvider.swift; path = Source/UsernameAuthProvider.swift; sourceTree = SOURCE_ROOT; };
+		DA3283631F6199EE00A61C1C /* EmailAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailAuthProvider.swift; path = Source/EmailAuthProvider.swift; sourceTree = SOURCE_ROOT; };
+		DA3283651F61A2D400A61C1C /* MobileAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileAuthProvider.swift; path = Source/MobileAuthProvider.swift; sourceTree = SOURCE_ROOT; };
 		DA9608A41F04236B009DA4F4 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		DA9608C01F050055009DA4F4 /* AlamofireObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireObjectMapper.xcodeproj; path = ../../../AlamofireObjectMapper/AlamofireObjectMapper.xcodeproj; sourceTree = "<group>"; };
 		DA9608DA1F05005B009DA4F4 /* ObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectMapper.xcodeproj; path = ../../../ObjectMapper/ObjectMapper.xcodeproj; sourceTree = "<group>"; };
@@ -242,6 +250,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA3283601F61940800A61C1C /* AuthProviders */ = {
+			isa = PBXGroup;
+			children = (
+				DA3283481F61881400A61C1C /* HasuraAuthProvider.swift */,
+				DA3283611F61944300A61C1C /* UsernameAuthProvider.swift */,
+				DA3283631F6199EE00A61C1C /* EmailAuthProvider.swift */,
+				DA3283651F61A2D400A61C1C /* MobileAuthProvider.swift */,
+			);
+			name = AuthProviders;
+			sourceTree = "<group>";
+		};
 		DA9608A31F04236B009DA4F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +335,7 @@
 		DA9B47D01F00F4700037E01A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA3283601F61940800A61C1C /* AuthProviders */,
 				DADC33F21F29EEE9001A7C13 /* Supporting Files */,
 				DADC34431F29F083001A7C13 /* Models */,
 				DADC33CC1F29EEC3001A7C13 /* AnonymousUserApi.swift */,
@@ -643,10 +663,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3283621F61944300A61C1C /* UsernameAuthProvider.swift in Sources */,
 				DADC33E41F29EEC4001A7C13 /* Hasura+Alamofire.swift in Sources */,
 				DADC33E11F29EEC4001A7C13 /* Extensions.swift in Sources */,
 				DADC33E31F29EEC4001A7C13 /* Hasura.swift in Sources */,
 				DADC33E91F29EEC4001A7C13 /* HasuraUser.swift in Sources */,
+				DA3283641F6199EE00A61C1C /* EmailAuthProvider.swift in Sources */,
+				DA3283491F61881400A61C1C /* HasuraAuthProvider.swift in Sources */,
 				DADC33DF1F29EEC4001A7C13 /* AuthRequest.swift in Sources */,
 				DADC33EA1F29EEC4001A7C13 /* JSONType.swift in Sources */,
 				DA017D411F2B929400C3DB58 /* ConfirmMobileRequest.swift in Sources */,
@@ -656,6 +679,7 @@
 				DADC33E61F29EEC4001A7C13 /* HasuraClient.swift in Sources */,
 				DADC33EB1F29EEC4001A7C13 /* MessageResponse.swift in Sources */,
 				DADC33DE1F29EEC3001A7C13 /* AuthenticatedUserApi.swift in Sources */,
+				DA3283661F61A2D400A61C1C /* MobileAuthProvider.swift in Sources */,
 				DADC33E81F29EEC4001A7C13 /* HasuraErrorResponse.swift in Sources */,
 				DADC33EC1F29EEC4001A7C13 /* OfflineStore.swift in Sources */,
 				DADC33E21F29EEC4001A7C13 /* FileUploadResponse.swift in Sources */,

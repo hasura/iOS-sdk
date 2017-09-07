@@ -7,7 +7,6 @@
 //
 
 import ObjectMapper
-
 class TodoRecord: Mappable {
     
     var id: Int!

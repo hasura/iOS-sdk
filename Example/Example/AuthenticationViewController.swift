@@ -25,20 +25,11 @@ class AuthenticationViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
-        if user.isLoggedIn {
-            navigateToTodoVC()
+        let provider = UsernameAuthProvider(username: "username", password: "password")
+        user.signUp(provider: provider) { (isSuccessful, isPendingVerification, error) in
+            
         }
-        
-        user.username = "jaison"
-        user.mobile = "8861503583"
-        
-        user.sendOtpToMobile { (isSuccessful, error) in
-            if isSuccessful {
-                print("OTP sent")
-            } else {
-                print("OTP error: \(String(describing: error?.localizedDescription))")
-            }
-        }
+    
     }
     
     func downloadFile() {
@@ -74,13 +65,7 @@ class AuthenticationViewController: UIViewController {
         user.username = username.text!
         user.password = password.text!
         
-        user.login { (successful: Bool, error: HasuraError?) in
-            if successful {
-                self.navigateToTodoVC()
-            } else {
-                self.handleError(error: error)
-            }
-        }
+    
 
     }
     
@@ -92,17 +77,7 @@ class AuthenticationViewController: UIViewController {
         user.username = username.text!
         user.password = password.text!
         
-        user.signUp { (isSuccessful, isPendingVerification, error) in
-            if isSuccessful {
-                if isPendingVerification {
-                    
-                } else {
-                    self.navigateToTodoVC()
-                }
-            } else {
-                self.handleError(error: error)
-            }
-        }
+    
     }
     
     private func navigateToTodoVC() {

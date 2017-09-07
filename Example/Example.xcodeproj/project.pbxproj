@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07B967C555C6D111B94C0893 /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D05395E59C321E3F231AB9 /* Pods_ExampleTests.framework */; };
-		56B91EAE25E4DE42E491DA7D /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE54791C1C0F274EAFEA40F /* Pods_Example.framework */; };
 		AC4D9D0B34CD49C6708E79AE /* Pods_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F683887ADC0F41A76872D8 /* Pods_ExampleUITests.framework */; };
+		DA3283451F6186D600A61C1C /* Hasura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3283441F6186D600A61C1C /* Hasura.framework */; };
+		DA3283471F6186E200A61C1C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3283461F6186E200A61C1C /* ObjectMapper.framework */; };
 		DA6DF1DB1F0F682300F41AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6DF1DA1F0F682300F41AAC /* Main.storyboard */; };
 		DA6DF1DF1F0F687000F41AAC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DF1DE1F0F687000F41AAC /* Extensions.swift */; };
 		DA6DF1E21F0F689A00F41AAC /* TodoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DF1E01F0F689A00F41AAC /* TodoRecord.swift */; };
@@ -60,6 +61,8 @@
 		7DE54791C1C0F274EAFEA40F /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99CC6972CE8F5919AA35A24B /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		D8F683887ADC0F41A76872D8 /* Pods_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3283441F6186D600A61C1C /* Hasura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hasura.framework; path = "../build/Debug-iphoneos/Hasura.framework"; sourceTree = "<group>"; };
+		DA3283461F6186E200A61C1C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../ObjectMapper/build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		DA6DF1DA1F0F682300F41AAC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DA6DF1DE1F0F687000F41AAC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DA6DF1E01F0F689A00F41AAC /* TodoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRecord.swift; sourceTree = "<group>"; };
@@ -87,7 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B91EAE25E4DE42E491DA7D /* Pods_Example.framework in Frameworks */,
+				DA3283471F6186E200A61C1C /* ObjectMapper.framework in Frameworks */,
+				DA3283451F6186D600A61C1C /* Hasura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +203,8 @@
 		DA9B488C1F0130DE0037E01A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA3283461F6186E200A61C1C /* ObjectMapper.framework */,
+				DA3283441F6186D600A61C1C /* Hasura.framework */,
 				7DE54791C1C0F274EAFEA40F /* Pods_Example.framework */,
 				27D05395E59C321E3F231AB9 /* Pods_ExampleTests.framework */,
 				D8F683887ADC0F41A76872D8 /* Pods_ExampleUITests.framework */,
