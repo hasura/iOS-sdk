@@ -4,8 +4,11 @@ iOS SDK
 The iOS SDK for Hasura.
 
 
-NOTE: This sdk works with Hasura running on version below 0.15
-==============================================================
+NOTE: 
+=====
+
+## This sdk works with Hasura running on version below 0.15
+
 
 
 Installation
